@@ -44,6 +44,14 @@ Route::delete('/details/{id}/delete', [DetailsController::class, 'destroy'])->na
 // Dashboard Controller
 Route::get('/dashboard', [DashboardController::class,'dashboard'])->name('dashboard');
 
+Route::middleware(['auth', 'role:admin'])->group(function () {
+    Route::get('/dashboard/admin', fn() => view('dashboard'));
+});
+
+Route::middleware(['auth', 'role:pegawai'])->group(function () {
+    Route::get('/dashboard/pegawai', fn() => view('dashboard'));
+});
+
 Auth::routes();
 
 // Route::get('/dashboard', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

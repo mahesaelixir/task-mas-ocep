@@ -18,17 +18,6 @@ class RoleSeeder extends Seeder
     {
         Role::create(['name' => 'admin']);
         Role::create(['name' => 'pegawai']);
-        // Role::insert([
-        //     ['name' => 'admin'],
-        //     ['name' => 'pegawai'],
-        // ]);
-        // $admin = Role::where('name', 'admin')->first();
-        // $pegawai = Role::where('name', 'pegawai')->first();
-
-        // $user = User::first(); // atau cari user by email
-
-        // if ($user) {
-        //     $user->roles()->attach($admin->id); // assign role admin ke user pertama
-        // }
+        
     }
 }
